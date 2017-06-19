@@ -13,7 +13,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {                                                   //shows all users
         $users = User::all();
         return view('index', ['users' => $users]);
     }
@@ -24,7 +24,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {                                                  //create a new user
         $users = User::all();
         return view('create', ['users' => $users]);
     }
@@ -57,16 +57,6 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -89,7 +79,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {                                                   //find and updating the user
         $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -117,6 +107,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);      //find and delete the user
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }

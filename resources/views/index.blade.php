@@ -38,8 +38,6 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <a href="{{ route('user.edit', $user->id) }}" class="btn bg-primary">Edit</a>
                                     <input type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');" name="name" value="delete">
-
-
                                 </form>
                             </td>
                         </tr>
