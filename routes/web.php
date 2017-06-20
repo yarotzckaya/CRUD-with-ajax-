@@ -19,6 +19,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('user', 'UserController');
 });
 
-Route::get('/test', function (){
-    return view('master');
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('auto', 'AutoController');
 });
+

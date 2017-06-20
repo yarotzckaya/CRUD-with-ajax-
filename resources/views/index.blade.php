@@ -7,6 +7,7 @@
         </div>
     </div>
 
+    <h2>Users</h2>
 
     <div class="row">
         <table class="table table-stripped">
@@ -42,7 +43,17 @@
                             </td>
                         </tr>
                     @endforeach
-            <a href="{{ route('user.create') }}" class="btn btn-info pull-right">Add new User</a><br><br><br>
+
+            <div class="form">
+                <div class="col-lg-15">
+                    <div class="col-lg-10">
+                 <a href="{{ route('user.create') }}" class="btn btn-info pull-right">Add new User</a>
+                    </div>
+                    <div class="col-md-lg-12">
+                 <a class="btn btn-info pull-right" href="{{ route('auto.index') }}">Autos</a>
+                 </div>
+                </div><br><br><br>
+            </div>
         </table>
 
     </div>

@@ -41,6 +41,10 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="save">
                 </div>
+                <div class="form-group">
+                    <a class="btn btn-info" href="{{ route('auto.create') }}">add new auto</a>
+
+                </div>
             </form>
         </div>
     </div>
